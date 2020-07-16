@@ -1,0 +1,12 @@
+{
+  "name": "404-not-found",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx serve"
+  },
+  "keywords": [],
+  "author": "Herman Dardon",
+  "license": "MIT"
+}

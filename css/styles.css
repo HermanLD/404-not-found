@@ -1,0 +1,165 @@
+:root {
+  /* TYPOGRAPHY */
+  --space: 'Space Mono', monospace;
+  --inconsolata: 'Inconsolata', monospace;
+  --mont: 'Montserrat', sans-serif;
+  
+  --space-reg: 400;
+  --bold: 700;
+  --mont-bold: 600;
+
+  /* COLORS */
+  --gray-1: #333333;
+  --gray-2: #4F4F4F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 14px;
+  font-family: var(--space);
+  font-weight: var(--space-reg);
+  color: var(--gray-1);
+}
+
+a {
+  color:  var(--gray-1);
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: 
+    "header"
+    "scarecrow"
+    "message"
+    "footer"
+  ;
+}
+
+.top {
+  padding-top: 20px;
+  padding-left: 24px;
+  grid-area: header;
+}
+
+.top__logo {
+  font-family: var(--inconsolata);
+  font-size: 1.714rem;
+  font-weight: var(--bold);
+  line-height: 25px;
+  letter-spacing: -0.08rem;
+  text-transform: uppercase;
+}
+
+.scarecrow {
+  grid-area: scarecrow;
+  width: 75%;
+  justify-self: center;
+  align-self: center;
+}
+
+.msg {
+  grid-area: message;
+  padding-left: 24px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.msg__header {
+  font-size: 3.429rem;
+  font-weight: var(--bold);
+  line-height: 71px;
+  letter-spacing: -0.035em;
+}
+
+.msg__content {
+  color: var(--gray-2);
+  font-size: 1.286rem;
+  line-height: 27px;
+  letter-spacing: -0.035em;
+  margin-top: 29px;
+  max-width: 400px;
+}
+
+.msg__cta {
+  display: inline-block;
+  color: white;
+  background: var(--gray-1);
+  font-weight: var(--bold);
+  line-height: 21px;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  padding: 24px 43px;
+  margin-top: 67px;
+}
+
+.bottom {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom__credits {
+  font-family: var(--mont);
+  font-weght: var(--mont-bold);
+  align-self: end;
+  margin-bottom: 42px;
+}
+
+@media (min-width: 550px) {
+  .msg {
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .msg__header {
+    font-size: 4.571rem;
+    line-height: 71px;
+    letter-spacing: -0.035em;
+  }
+
+  .msg__content {
+    font-size: 1.714rem;
+    line-height: 36px;
+    letter-spacing: -0.035em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    grid-template-areas: 
+      "header header"
+      "scarecrow message"
+      "footer footer"
+    ;
+  }
+
+  .top {
+    padding-top: 40px;
+    padding-left: 77px;
+  }
+
+  .scarecrow {
+    width: 100%;
+    padding-left: 77px;
+  }
+
+  .msg {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 60px
+  }
+}
